@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Pagina 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?=base_url('');?>">BlackDragons</a>
@@ -27,23 +26,28 @@
         </div>
     </nav>
 
-    <section>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="<?=base_url('public/imagens/filme2.jpg')?>" class="d-block w-100" alt="...">
+    <div class="row">
+        <div class="col-md-6 position-absolute top-50 start-50 translate-middle">
+            <form action="createToDo.php" method="POST">
+                <div class="form-group">
+                    <label for="titulo">Nome</label>
+                    <input id="nome" class="form-control" name="nome" type="text"></input>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+                <div class="form-group">
+                    <label for="descricao">Email</label>
+                    <input id="Email" class="form-control" name="email" type="text"></input>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Senha</label>
+                    <input id="Senha" class="form-control" name="senha" type="password"></input>
+                </div>
+                <div class="form-group">
+                    <input id="btnCadastrar" class="btn btn-success" name="btnCadastrar" type="submit" value="Cadastrar"></input>
+                </div>
+            </form>
         </div>
-    </section>
-
+    </div>
 
 </body>
+</html>
+
