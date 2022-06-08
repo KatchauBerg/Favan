@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel='stylesheet' href='public/bootstrap/css/bootstrap.css'>
+    <link rel='stylesheet' href='<?=base_url('public/bootstrap/css/bootstrap.css')?>'>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">

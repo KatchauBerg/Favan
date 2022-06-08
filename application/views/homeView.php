@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página 1</title>
+    <title>Home Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -21,7 +21,7 @@
                 <a class="nav-link" href="create.php">Cadastro</a>
                 <a class="nav-link" href="pagina2.php">Listagem dos Filmes</a>
                 <a class="nav-link" href="pagina3.php">Cadastro de Filmes</a>
-                <a class="nav-link" href="<?=base_url('loginView')?>">Login</a>
+                <a class="nav-link" href="<?=base_url('login');?>">Login</a>
             </div>
             </div>
         </div>
