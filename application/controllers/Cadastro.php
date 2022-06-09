@@ -15,7 +15,9 @@ class cadastro extends CI_Controller {
 		$getDados = (object) $getDados;
 
 		$this->load->model('locadoramodel', 'model'); //carrega o model
+
 		$this->model->inserirDadosCadastro($getDados->nome, $getDados->email, $getDados->senha); //função do model
+
 
 	}
 

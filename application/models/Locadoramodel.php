@@ -18,15 +18,34 @@ class Locadoramodel extends CI_Model
     public function inserirDadosCadastro($nome, $email, $senha)
     {
 
-		$dadosUsuario =
-		[
-			'nome'=>$nome,
-			'email'=>$email,
-			'senha'=>$senha
-		];
+      $dadosUsuario =
+      [
+        'nome'=>$nome,
+        'email'=>$email,
+        'senha'=>$senha
+      ];
 
-		$this->db->insert('usuario', $dadosUsuario);
+      $this->db->insert('usuario', $dadosUsuario);
 
+    }
+
+    public function listaFilmes()
+    {
+      $sql = $this->db->get('filme')->result_array();
+      $sql = (object) $sql;
+
+      print_r($sql); exit;
+    }
+
+    public function cadastraFilmes($titulo, $genero)
+    {
+      $dadosFilme =
+      [
+        'titulo'=>$titulo,
+        'genero'=>$genero,
+      ];
+
+      $this->db->insert('filme', $dadosFilme);
     }
 }
 
