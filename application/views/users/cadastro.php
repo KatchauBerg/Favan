@@ -63,6 +63,7 @@
     $("#btnCadastrar").click(function()
     {
         getDadosCadastro()
+        redirect()
     });
 
     function getDadosCadastro()
@@ -74,5 +75,10 @@
             senha: $("#txtSenha").val()
             }
         );
+    }
+
+    function redirect()
+    {
+        window.location.replace('<?=base_url('listaCliente')?>')
     }
 </script>
