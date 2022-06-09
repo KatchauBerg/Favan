@@ -17,10 +17,10 @@ class ListaFilmes extends CI_Controller
 		$this->load->view('filmes/listaFilmes', $dados);
 	}
 
-	public function getFilmes()
+	public function deleteFilme($id)
 	{
-		$retornaFilmes = $this->locadora->listaFilmes();
-		print_r($retornaFilmes); exit;
+		$this->locadora->deletar($id);
+		redirect('listafilmes');
 	}
 
 }

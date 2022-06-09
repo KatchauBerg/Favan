@@ -39,19 +39,46 @@
             </tr>
         </thead>
         <tbody>
+            <?php foreach ($ListaFilmes as $filme) : ?>
             <tr>
-                <?php foreach ($ListaFilmes as $filme) : ?>
-                    <td><?= $filme['id'] ?></td>
-                    <td><?= $filme['nomeFilme'] ?></td>
-                    <td><?= $filme['categoria'] ?></td>
+                <td><?= $filme['id'] ?></td>
+                <td><?= $filme['nomeFilme'] ?></td>
+                <td><?= $filme['categoria'] ?></td>
+                <td><a href="javascript:deletarPlataforma(<?= $filme['id'] ?>)" class="btn btn-danger btn-sm" id="btnDelete"><i class="fas fa-times"></i> Excluir</a></td>
             </tr>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
-
-
-
-
 </body>
-
 </html>
+
+<script>
+
+    // $("#btnDelete").click(function(){
+
+    //     deletarPlataforma(id)
+
+    // });
+
+
+    // function getId()
+    // {
+    //     $.post(
+    //     base + '/cadastraUsuario',{
+    //         id: $('#btnDelete').val()
+    //         }
+    //     );
+    // }
+
+    function deletarPlataforma(id)
+    {
+        var myUrl = 'listafilmes/deleteFilme/'+id
+        if (confirm("Deseja realmente apagar essa plataforma?")) {
+            window.location.href = myUrl;
+            alert("A plataforma foi deletado.");
+        } else {
+            alert("Processo não realizado.");
+            return;
+        }
+    }
+</script>

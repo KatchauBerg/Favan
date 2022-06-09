@@ -63,7 +63,7 @@
     $("#btnCadastrar").click(function()
     {
         getDadosCadastro()
-        // redirect()
+        redirect()
     });
 
     function getDadosCadastro()
