@@ -7,10 +7,10 @@ class Locadoramodel extends CI_Model
         parent::__construct();
     }
 
-    public function cadastraUsuario()
+    public function listaUsuario()
     {
       // FUNCAO REALIAZA "SELECT * FROM locadora
-		  $query = $this->db->get('locadora')->result_array();
+		  $query = $this->db->get('usuario')->result_array();
 		  $query = (object) $query;
 
     }
