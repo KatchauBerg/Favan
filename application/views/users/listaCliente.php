@@ -35,6 +35,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Senha</th>
+                <th scope="col">Deletar Usuario</th>
             </tr>
         </thead>
         <tbody id='tabelaCliente'>
@@ -44,9 +45,24 @@
                 <td><?=$cliente['nome']?></td>
                 <td><?=$cliente['email']?></td>
                 <td><?=$cliente['senha']?></td>
+                <td><a href="javascript:deletarPlataforma(<?= $cliente['id'] ?>)" class="btn btn-danger btn-sm" id="btnDelete"><i class="fas fa-times"></i> Excluir</a></td>
             </tr>
             <?php endforeach;?>
         </tbody>
     </table>
 </body>
 </html>
+
+<script>
+     function deletarPlataforma(id)
+    {
+        var myUrl = 'listacliente/deleteUser/'+id
+        if (confirm("Deseja realmente apagar essa plataforma?")) {
+            window.location.href = myUrl;
+            alert("A plataforma foi deletado.");
+        } else {
+            alert("Processo não realizado.");
+            return;
+        }
+    }
+</script>
