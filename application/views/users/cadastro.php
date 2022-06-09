@@ -42,7 +42,7 @@
                     <input id="txtSenha" class="form-control" name="senha" type="password"></input>
                 </div>
                 <div class="form-group">
-                    <input id="btnCadastrar" onclick = "getDadosCadastro()" class="btn btn-success" name="btnCadastrar" type="button" value="Cadastrar"></input>
+                    <input id="btnCadastrar" class="btn btn-success" name="btnCadastrar" type="button" value="Cadastrar"></input>
                 </div>
             </form>
         </div>

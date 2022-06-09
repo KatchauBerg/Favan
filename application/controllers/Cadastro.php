@@ -14,23 +14,9 @@ class cadastro extends CI_Controller {
 		$getDados = $this->input->post();
 		$getDados = (object) $getDados;
 
-		// print_r($getDados); exit;
+		$this->load->model('locadoramodel', 'model'); //carrega o model
+		$this->model->inserirDadosCadastro($getDados->nome, $getDados->email, $getDados->senha); //função do model
 
-		$this->inserDadosCadastro($getDados->nome, $getDados->email, $getDados->senha);
-		
 	}
 
-	public function inserDadosCadastro($nome, $email, $senha)
-    {
-
-		$dadosUsuario = 
-		[
-			'nome'=>$nome,
-			'email'=>$email,
-			'senha'=>$senha
-		];
-
-		$this->db->insert('usuario', $dadosUsuario);
-        
-    }
 }
