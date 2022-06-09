@@ -44,10 +44,16 @@ class Locadoramodel extends CI_Model
       $this->db->insert('filme', $dadosFilme);
     }
 
-    public function deletar($id)
+    public function deletarFilme($id)
     {
         $this->db->where("id", $id);
         return $this->db->delete('filme');
+    }
+
+    public function deletarUser($id)
+    {
+      $this->db->where("id", $id);
+      return $this->db->delete('usuario');
     }
 
 }

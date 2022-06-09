@@ -19,7 +19,7 @@ class ListaFilmes extends CI_Controller
 
 	public function deleteFilme($id)
 	{
-		$this->locadora->deletar($id);
+		$this->locadora->deletarFilme($id);
 		redirect('listafilmes');
 	}
 

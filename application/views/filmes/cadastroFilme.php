@@ -75,6 +75,7 @@
 
     function redirect()
     {
+        // alert(123);
         window.location.replace('<?=base_url('listaFilmes')?>')
     }
 </script>

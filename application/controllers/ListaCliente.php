@@ -14,4 +14,11 @@ class listacliente extends CI_Controller {
 		$dados ['listaCliente'] = $this->locadora->listaUsuario(); //o $this->locadora->listaUsuario(); é a funcao onde retorna pra mim os dados do banco de dados
 		$this->load->view('users/listaCliente', $dados);
 	}
+
+
+	public function deleteUser($id)
+	{
+		$this->locadora->deletarUser($id);
+		redirect('listacliente');
+	}
 }
