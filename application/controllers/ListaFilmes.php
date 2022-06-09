@@ -19,10 +19,8 @@ class ListaFilmes extends CI_Controller
 
 	public function getFilmes()
 	{
-
 		$retornaFilmes = $this->locadora->listaFilmes();
 		print_r($retornaFilmes); exit;
-
 	}
 
 }
