@@ -37,8 +37,8 @@ class Locadoramodel extends CI_Model
     {
       $dadosFilme =
       [
-        'titulo'=>$titulo,
-        'genero'=>$genero,
+        'nomeFilme'=>$titulo,
+        'categoria'=>$genero,
       ];
 
       $this->db->insert('filme', $dadosFilme);

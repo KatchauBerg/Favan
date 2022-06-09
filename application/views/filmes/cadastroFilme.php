@@ -33,15 +33,15 @@
             <form action="createCategoriasToDo.php" method="POST">
                 <div class="form-group">
                     <label for="titulo">Titulo</label>
-                    <input id="titulo" class="form-control" name="titulo" type="text"></input>
+                    <input id="txtTitulo" class="form-control" name="titulo" type="text"></input>
                 </div>
                 <div class="form-group">
                     <label for="genero">Genero</label>
-                    <input id="genero" class="form-control" name="genero" type="text"></input>
+                    <input id="txtGenero" class="form-control" name="genero" type="text"></input>
                 </div>
 
                 <div class="form-group">
-                    <input id="btnCadastrar" class="btn btn-success" name="btnCadastrar" type="submit" value="Cadastrar"></input>
+                    <input id="btnCadastraFilme" class="btn btn-success" name="btnCadastrar" type="button" value="Cadastrar"></input>
                 </div>
             </form>
         </div>
@@ -49,3 +49,32 @@
 
 </body>
 </html>
+
+<script src = 'public/js/jquery-3.6.0.min.js'></script>
+<script>
+    var base = '<?=base_url('cadastroFilme')?>'
+
+    $('#txtTitulo').val('Ultimate Go Horse Project');
+    $('#txtGenero').val('Genero GO HORSE');
+
+    $("#btnCadastraFilme").click(function()
+    {
+        getDadosCadastro()
+        redirect()
+    });
+
+    function getDadosCadastro()
+    {
+        $.post(
+        base + '/getFilmes',{
+            titulo: $('#txtTitulo').val(),
+            genero: $('#txtGenero').val(),
+            }
+        );
+    }
+
+    function redirect()
+    {
+        window.location.replace('<?=base_url('listaFilmes')?>')
+    }
+</script>
