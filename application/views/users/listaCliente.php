@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?=base_url('');?>">BlackDragons</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,8 +20,8 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="<?=base_url('listaCliente');?>">Listagem dos clientes</a>
                 <a class="nav-link" href="<?=base_url('cadastro');?>">Cadastro</a>
-                <a class="nav-link" href="pagina2.php">Listagem dos Filmes</a>
-                <a class="nav-link" href="pagina3.php">Cadastro de Filmes</a>
+                <a class="nav-link" href="<?=base_url('listaFilmes');?>">Listagem dos Filmes</a>
+                <a class="nav-link" href="<?=base_url('cadastroFilme')?>">Cadastro de Filmes</a>
                 <a class="nav-link" href="<?=base_url('login');?>">Login</a>
             </div>
             </div>
@@ -50,4 +50,8 @@
 
 </body>
 </html>
+
+//Jquery
+<script src = 'public/js/jquery-3.6.0.min.js'></script>
+
 

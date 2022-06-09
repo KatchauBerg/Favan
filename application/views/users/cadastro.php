@@ -31,18 +31,18 @@
             <form action="createToDo.php" method="POST">
                 <div class="form-group">
                     <label for="titulo">Nome</label>
-                    <input id="nome" class="form-control" name="nome" type="text"></input>
+                    <input id="txtNome" class="form-control" name="nome" type="text"></input>
                 </div>
                 <div class="form-group">
                     <label for="descricao">Email</label>
-                    <input id="Email" class="form-control" name="email" type="text"></input>
+                    <input id="txtEmail" class="form-control" name="email" type="text"></input>
                 </div>
                 <div class="form-group">
                     <label for="descricao">Senha</label>
-                    <input id="Senha" class="form-control" name="senha" type="password"></input>
+                    <input id="txtSenha" class="form-control" name="senha" type="password"></input>
                 </div>
                 <div class="form-group">
-                    <input id="btnCadastrar" class="btn btn-success" name="btnCadastrar" type="submit" value="Cadastrar"></input>
+                    <input id="btnCadastrar" onclick = "getDadosCadastro()" class="btn btn-success" name="btnCadastrar" type="button" value="Cadastrar"></input>
                 </div>
             </form>
         </div>
@@ -51,3 +51,28 @@
 </body>
 </html>
 
+<!-- //Jquery -->
+<script src = 'public/js/jquery-3.6.0.min.js'></script>
+<script>
+    var base = '<?=base_url('cadastro')?>'
+
+    $('#txtNome').val('Kevin');
+    $('#txtEmail').val('kevinlima138@gmail.com');
+    $('#txtSenha').val('123456');
+
+    $("#btnCadastrar").click(function()
+    {
+        getDadosCadastro()
+    });
+
+    function getDadosCadastro()
+    {
+        $.post(
+        base + '/cadastraUsuario',{
+            nome: $('#txtNome').val(),
+            email: $('#txtEmail').val(),
+            senha: $("#txtSenha").val()
+            }
+        );
+    }
+</script>
