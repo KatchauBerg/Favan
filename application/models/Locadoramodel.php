@@ -10,8 +10,7 @@ class Locadoramodel extends CI_Model
     public function listaUsuario()
     {
       // FUNCAO REALIAZA "SELECT * FROM locadora
-		  $query = $this->db->get('usuario')->result_array();
-		  $query = (object) $query;
+		  return $this->db->get('usuario')->result_array();
 
     }
 
@@ -31,10 +30,7 @@ class Locadoramodel extends CI_Model
 
     public function listaFilmes()
     {
-      $sql = $this->db->get('filme')->result_array();
-      $sql = (object) $sql;
-
-      print_r($sql); exit;
+      return $this->db->get('filme')->result_array();
     }
 
     public function cadastraFilmes($titulo, $genero)

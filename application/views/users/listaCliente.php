@@ -35,23 +35,18 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Senha</th>
-                <th scope="col">Ações</th>
             </tr>
         </thead>
-        <tbody>
-
-
-
+        <tbody id='tabelaCliente'>
+            <?php foreach($listaCliente as $cliente):?>
+            <tr>
+                <td><?=$cliente['id']?></td>
+                <td><?=$cliente['nome']?></td>
+                <td><?=$cliente['email']?></td>
+                <td><?=$cliente['senha']?></td>
+            </tr>
+            <?php endforeach;?>
         </tbody>
     </table>
-
-
-
-
 </body>
 </html>
-
-//Jquery
-<script src = 'public/js/jquery-3.6.0.min.js'></script>
-
-
