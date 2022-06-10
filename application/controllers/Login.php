@@ -20,14 +20,7 @@ class login extends CI_Controller {
 		$getDadosLogin = $this->input->post();
 		$getDadosLogin = (object) $getDadosLogin;
 
-		$validaLogin = $this->validaLogin($getDadosLogin->email, $getDadosLogin->senha);
-
-
-		if($validaLogin == "Logado");
-		{
-			return true;
-			// redirect('HomeController');
-		}
+		$this->validaLogin($getDadosLogin->email, $getDadosLogin->senha);
 	}
 
 	public function validaLogin($email, $senha)
@@ -42,13 +35,12 @@ class login extends CI_Controller {
 			if($usuario->email != $email && $usuario->senha != $senha)
 			{
 				return "Dados Incorretos";
-				// redirect("DadosIncorretos");
 			}
 			else
 			{
 				return "Logado";
 			}
 		}
-		// print_r($retornaDados); exit;
+
 	}
 }
