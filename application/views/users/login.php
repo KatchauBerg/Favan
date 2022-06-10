@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +34,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <form action="doLogin.php" method="POST">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" name="email" type="email" class="form-control" required></input>
+                    <input id="txtEmail" name="email" type="email" class="form-control" required></input>
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input id="senha" name="senha" type="password" class="form-control" required></input>
+                    <input id="txtSenha" name="senha" type="password" class="form-control" required></input>
                 </div>
                 <input id="btnLogin" name="btnLogin" type="button" class="btn btn-primary" value="Entrar"></input>
             </form>
@@ -46,3 +47,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </body>
 </html>
+
+<script src = 'public/js/jquery-3.6.0.min.js'></script>
+<script>
+    var base = '<?=base_url('login')?>'
+
+    $('#txtEmail').val('kevinlima138@gmail.com');
+    $('#txtSenha').val('123456');
+
+    $("#btnLogin").click(function()
+    {
+        getDadosCadastro()
+        // redirect()
+    });
+
+    function getDadosCadastro()
+    {
+        $.post(
+        base + '/login',{
+
+            email:$('#txtEmail').val(),
+            senha:$('#txtSenha').val()
+
+            }
+        );
+    }
+
+
+    function redirect()
+    {
+        window.location.replace('<?=base_url('listaCliente')?>')
+    }
+</script>

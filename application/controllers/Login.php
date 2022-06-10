@@ -3,9 +3,52 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class login extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('locadoramodel','locadora');
+
+	}
+
 	public function index()
 	{
-		// echo 123; exit;
 		$this->load->view('users/login');
+	}
+
+	public function login()
+	{
+		$getDadosLogin = $this->input->post();
+		$getDadosLogin = (object) $getDadosLogin;
+
+		$validaLogin = $this->validaLogin($getDadosLogin->email, $getDadosLogin->senha);
+
+
+		if($validaLogin == "Logado");
+		{
+			return true;
+			// redirect('HomeController');
+		}
+	}
+
+	public function validaLogin($email, $senha)
+	{
+
+		// var_dump([$email, $senha]); exit;
+		$retornaDados = $this->locadora->listaUsuario();
+
+		foreach ($retornaDados as $usuario)
+		{
+			$usuario = (object) $usuario;
+			if($usuario->email != $email && $usuario->senha != $senha)
+			{
+				return "Dados Incorretos";
+				// redirect("DadosIncorretos");
+			}
+			else
+			{
+				return "Logado";
+			}
+		}
+		// print_r($retornaDados); exit;
 	}
 }
