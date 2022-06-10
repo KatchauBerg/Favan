@@ -58,7 +58,17 @@ session_start();
     $("#btnLogin").click(function()
     {
         getDadosCadastro()
-        // redirect()
+
+        if($('#txtSenha').length >= 8)
+        {
+
+            redirect()
+        }
+        else
+        (
+
+        )
+
     });
 
     function getDadosCadastro()
@@ -76,6 +86,6 @@ session_start();
 
     function redirect()
     {
-        window.location.replace('<?=base_url('listaCliente')?>')
+        window.location.replace('<?=base_url('homeController')?>')
     }
 </script>

@@ -56,14 +56,19 @@
 <script>
     var base = '<?=base_url('cadastro')?>'
 
-    $('#txtNome').val('Kevin');
-    $('#txtEmail').val('kevinlima138@gmail.com');
-    $('#txtSenha').val('123456');
-
     $("#btnCadastrar").click(function()
     {
-        getDadosCadastro()
-        redirect()
+
+        if($('#txtSenha').val().length >= 8)
+        {
+            alert('Usuario Cadastrado');
+            getDadosCadastro()
+            redirect()
+        }
+        else
+        {
+            alert('Insira 8 Caracteres');
+        }
     });
 
     function getDadosCadastro()
